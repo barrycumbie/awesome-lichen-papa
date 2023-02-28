@@ -10,16 +10,41 @@
   <br/>
 <% } %> 
 
-<h3> add a new drink </h3>
+<h3> Update Drink</h3> 
+ <% for (var i=0; i< drinkData.length; i++ ) { %>
+  <form method="POST" action="/updateDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
+    <%= drinkData[i].drink_name %> (<%= drinkData[i].size %>) 
+    <input type="submit" value="update"> 
+  </form>
+  <br/>
+<% } %> 
+
+<h3> Price Drink</h3> 
+ <% for (var i=0; i< drinkData.length; i++ ) { %>
+  <form method="POST" action="/PriceDrink/<%= drinkData[i]._id %>" style="display: inline-block">  
+    <%= drinkData[i].drink_name %> (<%= drinkData[i].size %>) 
+    <input type="submit" value="Price"> 
+  </form>
+  <br/>
+<% } %> 
+
+
+
+<h3> Add a new drink </h3>
 
 <form method="POST" action="/addDrink">
     <label for="drink_name">Drink</label>
-        <input name="drink_name" value="new drink">
+        <input name="drink_name" value="">
     <br>
-    <label for="size">size</label>
-      <input name="size" value="gallon"> 
+    <label for="Size"> Size:</label>
+      <input name="Size" value=""> 
     <br>
-    <input type="submit" value="add a drink" />
+    <label for="Price">Price</label>
+      <input name="Price" value="$"> 
+    <br>
+    <input type="submit" value="Add-Drink" />
+
+    
 </form>
 <!-- 
 <form method="get" action="/update">
